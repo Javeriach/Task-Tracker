@@ -104,8 +104,14 @@ input[type='checkbox'] {
 }
 
 @media (max-width: 450px) {
+    body {
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 15px;
+  }
+  
   .todo_part {
-    width: 410px;
+    width: 400px;
     /* padding: 10px; */
   }
 
