@@ -8,10 +8,14 @@ const App = () => {
 
   let [arrayContainer, setArrayContainer] = useState(
     JSON.parse(localStorage.getItem('todolist'))
-  ); //to get the data
+      ? JSON.parse(localStorage.getItem('todolist'))
+      : []
+  );
+  //to get the data
   // of the todolist from the local storage
-
-  let [taskId, setTaskId] = useState(arrayContainer.length); //to give every element a id
+  console.log('The array Container', arrayContainer);
+  let [taskId, setTaskId] = useState(arrayContainer.length);
+  console.log(taskId);
   let [elementToEdit, setEditElement] = useState({
     taskId: '',
     text: '',
@@ -186,7 +190,7 @@ const App = () => {
   // -----------------------------------------------------------------------
   // For alert Bootstrap Handling
 
-  let [msg, setMsg] = useState('null');
+  let [msg, setMsg] = useState('');
   let [color, setMsgColor] = useState('');
   let [display, setMsgDisplay] = useState('d-none');
 
